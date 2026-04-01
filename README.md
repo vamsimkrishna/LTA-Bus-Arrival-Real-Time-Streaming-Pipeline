@@ -1,4 +1,5 @@
 🚀 LTA Bus Arrival Real-Time Streaming Pipeline
+
 📌 Overview
 
 This project builds a real-time data engineering pipeline that ingests live bus arrival data from Singapore’s LTA API, streams it via Kafka, processes events instantly, and generates alerts.
