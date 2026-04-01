@@ -25,39 +25,42 @@ CSV (data storage)
 🔄 Pipeline Flow
 
 1. Producer (Data Ingestion)
-Polls LTA Bus Arrival API every 10 seconds
+-Polls LTA Bus Arrival API every 10 seconds
 Extracts:
-Service number
-Estimated arrival time
-Passenger load
-Latitude & Longitude
-Tracking status
-Sends structured JSON events to Kafka
+-Service number
+-Estimated arrival time
+-Passenger load
+-Latitude & Longitude
+-Tracking status
+-Sends structured JSON events to Kafka
 
 3. Kafka (Streaming Layer)
 Topic: lta_bus_arrivals
 Handles real-time event streaming
 
 5. Consumer (Real-Time Processing)
-Reads streaming data from Kafka
-Calculates ETA in minutes
-Applies business logic to detect anomalies
+-Reads streaming data from Kafka
+-Calculates ETA in minutes
+-Applies business logic to detect anomalies
+
 Alerts Generated:
-LONG_WAIT → ETA > 15 minutes
-ARRIVING_OR_PASSED → ETA < 0
-HIGH_LOAD → crowded buses
-NORMAL → no issues
-Tracking Status:
-TRACKED → valid GPS data
-NOT_TRACKED → missing/invalid GPS
+-LONG_WAIT → ETA > 15 minutes
+-ARRIVING_OR_PASSED → ETA < 0
+-HIGH_LOAD → crowded buses
+-NORMAL → no issues
+-Tracking Status:
+-TRACKED → valid GPS data
+-NOT_TRACKED → missing/invalid GPS
 
 7. Output Layer
-processed_events.csv → all processed records
-alerts.csv → only anomaly events
+-processed_events.csv → all processed records
+-alerts.csv → only anomaly events
+
 📊 Example Output
-Service 12 | ETA: 18 min | Tracking: NOT_TRACKED | Alert: LONG_WAIT
-Service 79 | ETA: 9 min  | Tracking: TRACKED     | Alert: NORMAL
-Service 198 | ETA: -1 min | Tracking: NOT_TRACKED | Alert: ARRIVING_OR_PASSED
+-Service 12 | ETA: 18 min | Tracking: NOT_TRACKED | Alert: LONG_WAIT
+-Service 79 | ETA: 9 min  | Tracking: TRACKED     | Alert: NORMAL
+-Service 198 | ETA: -1 min | Tracking: NOT_TRACKED | Alert: ARRIVING_OR_PASSED
+
 📂 Project Structure
 lta_kafka_streaming/
 ├── producer/
@@ -72,8 +75,8 @@ lta_kafka_streaming/
 
 🚀 How to Run
 1. Start Kafka Services
-zookeeper-server-start.bat config/zookeeper.properties
-kafka-server-start.bat config/server.properties
+-zookeeper-server-start.bat config/zookeeper.properties
+-kafka-server-start.bat config/server.properties
 
 3. Create Kafka Topic
 kafka-topics.bat --create --topic lta_bus_arrivals --bootstrap-server localhost:9092
