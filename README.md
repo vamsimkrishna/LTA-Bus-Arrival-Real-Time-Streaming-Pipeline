@@ -105,7 +105,7 @@ Service 198 | ETA: -1 min | Tracking: NOT_TRACKED | Alert: ARRIVING_OR_PASSED
 
 ## 📂 Project Structure
 
-
+---
 lta_kafka_streaming/
 ├── producer/
 │ └── producer.py
@@ -116,6 +116,7 @@ lta_kafka_streaming/
 │ └── alerts.csv
 ├── requirements.txt
 └── README.md
+---
 
 ---
 
