@@ -108,12 +108,12 @@ Service 198 | ETA: -1 min | Tracking: NOT_TRACKED | Alert: ARRIVING_OR_PASSED
 
 lta_kafka_streaming/
 ├── producer/
-│   └── producer.py
+│ └── producer.py
 ├── consumer/
-│   └── consumer.py
+│ └── consumer.py
 ├── output/
-│   ├── processed_events.csv
-│   └── alerts.csv
+│ ├── processed_events.csv
+│ └── alerts.csv
 ├── requirements.txt
 └── README.md
 
