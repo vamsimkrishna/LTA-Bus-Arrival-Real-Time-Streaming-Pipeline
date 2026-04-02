@@ -28,11 +28,11 @@ LTA API → Kafka Producer → Kafka Topic → Kafka Consumer → CSV Outputs
 
 ## 📌 Key Features
 
-- Real-time data ingestion from LTA API  
-- Kafka-based streaming pipeline  
-- ETA calculation and anomaly detection  
-- Tracking status identification  
-- CSV-based data persistence
+* Real-time data ingestion from LTA API
+* Kafka-based streaming pipeline
+* ETA calculation and anomaly detection
+* Tracking status identification
+* CSV-based data persistence
 
 ---
 
@@ -105,18 +105,18 @@ Service 198 | ETA: -1 min | Tracking: NOT_TRACKED | Alert: ARRIVING_OR_PASSED
 
 ## 📂 Project Structure
 
----
+```
 lta_kafka_streaming/
 ├── producer/
-│ └── producer.py
+│   └── producer.py
 ├── consumer/
-│ └── consumer.py
+│   └── consumer.py
 ├── output/
-│ ├── processed_events.csv
-│ └── alerts.csv
+│   ├── processed_events.csv
+│   └── alerts.csv
 ├── requirements.txt
 └── README.md
----
+```
 
 ---
 
@@ -126,7 +126,6 @@ lta_kafka_streaming/
 
 zookeeper-server-start.bat config/zookeeper.properties
 kafka-server-start.bat config/server.properties
-
 
 ### 2. Create Kafka Topic
 
@@ -148,4 +147,4 @@ python consumer.py
 * Implemented producer–consumer architecture
 * Processed live API data
 * Designed anomaly detection logic
-* Worked with event-driven systems
+* Worked with event-driven systems.
